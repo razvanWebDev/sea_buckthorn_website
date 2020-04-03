@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 5em;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2em 0;
+}
+
+header nav .nav-links {
+  display: flex;
+  list-style: none;
+}
+
+header nav .nav-links a {
+  text-decoration: none;
+  margin-left: 2em;
+}
