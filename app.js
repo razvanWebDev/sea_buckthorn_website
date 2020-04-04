@@ -4,7 +4,7 @@ var header = document.querySelector("header");
 // Show/hade nav based on scroll direction
 var scrollPos = 0;
 const showHideNav = () => {
-  if (window.scrollY < 10) {
+  if (window.scrollY < 100) {
     header.classList.remove("showNav");
     header.classList.remove("hideNav");
   } else if (window.scrollY > scrollPos) {

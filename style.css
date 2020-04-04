@@ -3,6 +3,8 @@
 :root {
   --primary-color: orange;
   --secondary-color: green;
+  /* text */
+  --dark-text-color: #8c7363;
 }
 
 * {
@@ -11,7 +13,6 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
 
 /* ======================HEADER=============================== */
 header {
@@ -36,10 +37,10 @@ header.showNav {
   left: 0;
   transform: translateY(-100%);
   background-color: white;
-  color: black;
+  color: var(--dark-text-color);
   animation-name: slideDown;
   animation-fill-mode: forwards;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
 }
 
 header.hideNav {
@@ -48,10 +49,10 @@ header.hideNav {
   left: 0;
   transform: translateY(-100%);
   background-color: white;
-  color: black;
+  color: var(--dark-text-color);
   animation-name: slideUp;
   animation-fill-mode: forwards;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
 }
 
 header nav .nav-links {
@@ -86,6 +87,11 @@ header nav .nav-links a {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 }
 
+.hero-text {
+  text-align: center;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
 #hero-section h1 {
   font-size: 5em;
   line-height: 1;
@@ -109,7 +115,7 @@ header nav .nav-links a {
   border-radius: 50px;
   transition: all 0.3s;
   background-color: white;
-  color: black;
+  color: var(--dark-text-color);
   font-weight: 500;
   cursor: pointer;
   outline: none;
@@ -141,5 +147,18 @@ footer {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
 }
