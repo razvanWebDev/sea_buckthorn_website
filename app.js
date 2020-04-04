@@ -1,8 +1,11 @@
-// Cahe DOM elements
-var header = document.querySelector("header");
+// =====================CACHE DOM ELEMENTS=====================
+const header = document.querySelector("header");
 
+// =====================GLOBAL VARIABLES=====================
+let scrollPos = 0;
+
+// ========================HEADER============================
 // Show/hade nav based on scroll direction
-var scrollPos = 0;
 const showHideNav = () => {
   if (window.scrollY < 100) {
     header.classList.remove("showNav");
@@ -17,5 +20,5 @@ const showHideNav = () => {
   scrollPos = window.scrollY;
 };
 
-// Event listeners
+//=========================EVENT LISTENERS=====================
 window.addEventListener("scroll", showHideNav);
