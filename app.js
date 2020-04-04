@@ -1,14 +1,19 @@
 // Cahe DOM elements
-var navbar = document.querySelector("nav");
+var header = document.querySelector("header");
 
 // Show/hade nav based on scroll direction
 var scrollPos = 0;
 const showHideNav = () => {
-  if (window.scrollY === 0 || window.scrollY > scrollPos) {
-    navbar.classList.remove("showNav");
+  if (window.scrollY < 10) {
+    header.classList.remove("showNav");
+    header.classList.remove("hideNav");
+  } else if (window.scrollY > scrollPos) {
+    header.classList.remove("showNav");
+    header.classList.add("hideNav");
   } else {
-    navbar.classList.add("showNav");
-  } 
+    header.classList.add("showNav");
+    header.classList.remove("hideNav");
+  }
   scrollPos = window.scrollY;
 };
 

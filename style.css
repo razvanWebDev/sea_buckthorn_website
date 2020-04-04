@@ -12,29 +12,46 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body {
-}
-
 
 /* ======================HEADER=============================== */
-header nav {
-  position: absolute;
+header {
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  transition: all 0.7s;
+}
+
+header nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 2em 10vw;
-  color: white;
-  transition: all .5s;
 }
 
-header nav.showNav {
+header.showNav {
   position: fixed;
   top: 0;
   left: 0;
+  transform: translateY(-100%);
   background-color: white;
   color: black;
-  
+  animation-name: slideDown;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+
+header.hideNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  background-color: white;
+  color: black;
+  animation-name: slideUp;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
 }
 
 header nav .nav-links {
@@ -74,12 +91,11 @@ header nav .nav-links a {
   line-height: 1;
   margin-bottom: 1.2rem;
   font-weight: 800;
-
 }
 
 #hero-section h1 span {
-    color: var(--secondary-color);
-    font-weight: 900;
+  color: var(--secondary-color);
+  font-weight: 900;
 }
 
 #hero-section h2 {
@@ -91,7 +107,7 @@ header nav .nav-links a {
   padding: 1.2em;
   border: 1px solid white;
   border-radius: 50px;
-  transition: all .3s;
+  transition: all 0.3s;
   background-color: white;
   color: black;
   font-weight: 500;
@@ -100,11 +116,30 @@ header nav .nav-links a {
 }
 
 #hero-section button:hover {
-    background-color: transparent;
-    color: white;
+  background-color: transparent;
+  color: white;
 }
 
 /* =================================FOOTER============================== */
 footer {
-  min-height: 50vh;
+  min-height: 100vh;
+}
+
+/* =========================ANIMATIONS======================== */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
